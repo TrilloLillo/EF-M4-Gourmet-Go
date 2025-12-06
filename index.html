@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gourmet Go - Buscador de Recetas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!----------Navbar----------->
+    <header>
+      <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none"
+            >
+              <svg
+                class="bi me-2"
+                width="40"
+                height="32"
+                role="img"
+                aria-label="Bootstrap"
+              >
+                <use xlink:href="#bootstrap"></use>
+              </svg>
+            </a>
+            <ul
+              class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+            >
+              <li>
+                <a href="#" class="nav-link px-2 link-body-emphasis"
+                  >Nuevas Recetas</a
+                >
+              </li>
+              <li>
+                <a href="#" class="nav-link px-2 link-body-emphasis"
+                  >Para la Dieta</a
+                >
+              </li>
+              <li>
+                <a href="#" class="nav-link px-2 link-body-emphasis">Postres</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-2 link-body-emphasis"
+                  >Recetas Exprés</a
+                >
+              </li>
+            </ul>
+          
+          </div>
+        </div>
+      </header>
+    </header>
+    <!----------Hero----------->
+    <section>
+      <div class="px-4 py-5 my-5 text-center hero-img">
+        <h1 class="display-5 fw-bold text-body-emphasis">Gourmet Go</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">¿Qué cocinarás?</p>
+          <input
+            class="form-control form-control-lg mb-3"
+            type="text"
+            placeholder="ej: Busca por ingrediente..."
+            aria-label=".form-control-lg example"
+          />
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+              Buscar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------Tarjetas hardcodeadas---------------->
+
+    <div class="container text-center">
+      <div class="row align-items-center">
+        <div class="col-sm-12 col-lg-4 g-4">
+          <div class="card">
+            <img
+              src="./assets/images/pizza margarita.avif"
+              class="card-img-top img-cover"
+              alt="pizza margarita"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Pizza Margarita</h5>
+              <p class="card-text">
+                Una clásica pizza italiana con tomate, mozzarella fresca y
+                albahaca.
+              </p>
+              <a href="#" class="btn btn-primary">Ver Receta</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 g-4">
+          <div class="card">
+            <img
+              src="./assets/images/tostadas.avif"
+              class="card-img-top img-cover"
+              alt="tostadas"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Tostadas Gourmet</h5>
+              <p class="card-text">
+                Desayuno saludable con aguacate, huevo pochado y espinacas.
+              </p>
+              <a href="#" class="btn btn-primary">Ver Receta</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 g-4">
+          <div class="card">
+            <img
+              src="./assets/images/pancakes.avif"
+              class="card-img-top img-cover"
+              alt="Panqueques de Arándanos"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Panqueques de Arándanos</h5>
+              <p class="card-text">
+                Esponjosos panqueques servidos con miel y frutas frescas.
+              </p>
+              <a href="#" class="btn btn-primary">Ver Receta</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 g-4">
+          <div class="card">
+            <img
+              src="./assets/images/ensalada-cesar.avif"
+              class="card-img-top img-cover"
+              alt="Ensalada Cesar"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Ensalada César</h5>
+              <p class="card-text">
+                Lechuga romana fresca, crutones, queso parmesano y aderezo
+                especial.
+              </p>
+              <a href="#" class="btn btn-primary">Ver Receta</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 g-4">
+          <div class="card">
+            <img
+              src="./assets/images/bowl-quinoa.avif"
+              class="card-img-top img-cover"
+              alt="bowl de quinoa"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Bowl de Quinoa</h5>
+              <p class="card-text">
+                Un plato nutritivo con quinoa, vegetales asados y tahini.
+              </p>
+              <a href="#" class="btn btn-primary">Ver Receta</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 g-4">
+          <div class="card">
+            <img
+              src="./assets/images/pasta-primavera.jpg"
+              class="card-img-top img-cover"
+              alt="pasta primavera"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Pasta Primavera</h5>
+              <p class="card-text">
+                Fusilli con tomates cherry, espinaca y aceite de oliva virgen.
+              </p>
+              <a href="#" class="btn btn-primary">Ver Receta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-top pb-3 mb-1">
+      <p class="text-center text-body-secondary">© 2025 Gourmet Go</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/javascript/app.js"></script>
+  </body>
+</html>

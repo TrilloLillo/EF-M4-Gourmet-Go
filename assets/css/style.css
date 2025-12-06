@@ -1,0 +1,13 @@
+.hero-img {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(rgb(255 255 255 / 1), rgb(255 255 255 / 0.5)), url("../images/postres.avif");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.img-cover {
+  object-fit: cover;
+  aspect-ratio: 3/2;
+}
