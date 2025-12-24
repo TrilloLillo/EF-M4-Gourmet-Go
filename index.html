@@ -67,10 +67,11 @@
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">¿Qué cocinarás?</p>
           <input
+            id="search-input"
             class="form-control form-control-lg mb-3"
             type="text"
-            placeholder="ej: Busca por ingrediente..."
-            aria-label=".form-control-lg example"
+            placeholder="Busca por ingrediente..."
+            aria-label="buscador principal"
           />
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
@@ -80,108 +81,12 @@
         </div>
       </div>
     </section>
-    <!---------------Tarjetas hardcodeadas---------------->
+    <!---------------Tarjetas---------------->
 
     <div class="container text-center">
-      <div class="row align-items-center">
-        <div class="col-sm-12 col-lg-4 g-4">
-          <div class="card">
-            <img
-              src="./assets/images/pizza margarita.avif"
-              class="card-img-top img-cover"
-              alt="pizza margarita"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Pizza Margarita</h5>
-              <p class="card-text">
-                Una clásica pizza italiana con tomate, mozzarella fresca y
-                albahaca.
-              </p>
-              <a href="#" class="btn btn-primary">Ver Receta</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-lg-4 g-4">
-          <div class="card">
-            <img
-              src="./assets/images/tostadas.avif"
-              class="card-img-top img-cover"
-              alt="tostadas"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Tostadas Gourmet</h5>
-              <p class="card-text">
-                Desayuno saludable con aguacate, huevo pochado y espinacas.
-              </p>
-              <a href="#" class="btn btn-primary">Ver Receta</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-lg-4 g-4">
-          <div class="card">
-            <img
-              src="./assets/images/pancakes.avif"
-              class="card-img-top img-cover"
-              alt="Panqueques de Arándanos"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Panqueques de Arándanos</h5>
-              <p class="card-text">
-                Esponjosos panqueques servidos con miel y frutas frescas.
-              </p>
-              <a href="#" class="btn btn-primary">Ver Receta</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-lg-4 g-4">
-          <div class="card">
-            <img
-              src="./assets/images/ensalada-cesar.avif"
-              class="card-img-top img-cover"
-              alt="Ensalada Cesar"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Ensalada César</h5>
-              <p class="card-text">
-                Lechuga romana fresca, crutones, queso parmesano y aderezo
-                especial.
-              </p>
-              <a href="#" class="btn btn-primary">Ver Receta</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-lg-4 g-4">
-          <div class="card">
-            <img
-              src="./assets/images/bowl-quinoa.avif"
-              class="card-img-top img-cover"
-              alt="bowl de quinoa"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Bowl de Quinoa</h5>
-              <p class="card-text">
-                Un plato nutritivo con quinoa, vegetales asados y tahini.
-              </p>
-              <a href="#" class="btn btn-primary">Ver Receta</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-lg-4 g-4">
-          <div class="card">
-            <img
-              src="./assets/images/pasta-primavera.jpg"
-              class="card-img-top img-cover"
-              alt="pasta primavera"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Pasta Primavera</h5>
-              <p class="card-text">
-                Fusilli con tomates cherry, espinaca y aceite de oliva virgen.
-              </p>
-              <a href="#" class="btn btn-primary">Ver Receta</a>
-            </div>
-          </div>
-        </div>
+      <div id="recipes" class="row row-cols-lg-4 g-4 align-items-center">
+        <!-- Las tarjetas de recetas se insertarán aquí dinámicamente -->
+         
       </div>
     </div>
     <footer class="py-3 my-4">
