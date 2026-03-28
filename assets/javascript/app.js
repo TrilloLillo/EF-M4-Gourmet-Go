@@ -55,7 +55,7 @@ const renderRecipes = async (recipesList) => {
             <div class="card-body">
               <h5 class="card-title fw-bold text-dark">${recipe.strMeal}</h5>
               <p class="card-text text-muted" style="font-size: 0.9rem;">
-                ${recipe.strInstructions ? recipe.strInstructions.substring(0, 100) + '...' : 'Sin instrucciones disponibles.'}
+                ${recipe.strInstructions ? recipe.strInstructions.substring(0, 100) + '...' : 'No instructions available.'}
               </p>
             </div>
             <div class="card-footer bg-white border-0 pb-3">
@@ -103,7 +103,7 @@ function filterRecipes() {
   if (filtered.length === 0) {
     recipeContainer.innerHTML = `
       <div class="col-12 text-center mt-4">
-        <p class="fs-5">No encontramos recetas con "${searchTerm}". intenta con 'Chicken', 'Tomato' o 'Rice'.</p>
+        <p class="fs-5">No recipes found for "${searchTerm}". Try 'Chicken', 'Tomato' or 'Rice'.</p>
       </div>`;
     return;
   }

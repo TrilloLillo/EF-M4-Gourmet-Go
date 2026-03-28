@@ -37,16 +37,15 @@ function renderMeal(meal) {
       </div>
       <div class="col-md-7 text-start">
         <h2 class="fw-bold">${meal.strMeal}</h2>
-        <p class="text-muted mb-1"><strong>Categoria:</strong> ${meal.strCategory || '—'}</p>
-        <p class="text-muted mb-3"><strong>Origen:</strong> ${meal.strArea || '—'}</p>
+        <p class="text-muted mb-1"><strong>Category:</strong> ${meal.strCategory || '—'}</p>
+        <p class="text-muted mb-3"><strong>Origin:</strong> ${meal.strArea || '—'}</p>
 
-        <h5>Ingredientes</h5>
+        <h5>Ingredients</h5>
         <ul>
           ${ingredients.map(i => `<li>${i}</li>`).join('')}
         </ul>
-
-        <h5>Instrucciones</h5>
-        <p style="white-space: pre-line;">${meal.strInstructions || 'Sin instrucciones.'}</p>
+        <h5>Instructions</h5>
+        <p style="white-space: pre-line;">${meal.strInstructions || 'No instructions.'}</p>
 
         ${meal.strYoutube ? `<a href="${meal.strYoutube}" target="_blank" class="btn btn-outline-danger mt-3">Watch Video</a>` : ''}
       </div>
@@ -66,16 +65,16 @@ function showList() {
   const container = document.getElementById('meal-content');
 
   if (!id) {
-    if (container) container.innerHTML = '<p>No se ha especificado una receta. Vuelve a la búsqueda e intenta otra vez.</p>';
+    if (container) container.innerHTML = '<p>No recipe specified. Return to search and try again.</p>';
     return;
   }
 
   // show a small loader
-  if (container) container.innerHTML = '<p>Cargando receta...</p>';
+  if (container) container.innerHTML = '<p>Loading recipe...</p>';
 
   getMealById(id).then(meal => {
     if (!meal) {
-      if (container) container.innerHTML = '<p>No se encontró la receta solicitada.</p>';
+      if (container) container.innerHTML = '<p>Recipe not found.</p>';
       return;
     }
     // Ensure the detail section is visible (meal-detail may be hidden by default)
