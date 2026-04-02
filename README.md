@@ -1,95 +1,145 @@
-# Sprint 2: Desarrollo de Funcionalidad y Conexión a API
+# 🍽️ Gourmet Go
 
-(Entregable al final del Módulo 4)
+Aplicación web que permite buscar recetas dinámicamente utilizando la API pública de TheMealDB.
+El proyecto evoluciona desde un prototipo estático (Sprint 1) hacia una aplicación completamente funcional con consumo de API y renderizado dinámico.
 
-## Briefing del Cliente: "Gourmet Go" - Fase 2
+---
 
-¡El equipo está muy satisfecho con el prototipo visual del Sprint 1! El diseño ha sido aprobado y ahora es el momento de darle vida a la aplicación.
+## 🚀 Demo
 
-Para este segundo y último sprint, el objetivo es transformar la maqueta estática en una aplicación web completamente funcional. Esto implica conectar la interfaz con una API de recetas real, gestionar las búsquedas del usuario de forma asíncrona y mostrar los resultados dinámicamente en la página.
+![demo](./assets/images/live_demo_gif.gif)
+[Live Demo](https://trillolillo.github.io/EF-M4-Gourmet-Go/)
 
-## Información Clave sobre la API de TheMealDB:
+---
 
-Antes de comenzar, es fundamental entender cómo obtendremos los datos. Para saber qué ingredientes se pueden buscar, la API nos proporciona un endpoint que lista todas las opciones disponibles:
+## 📌 Descripción
 
-    Endpoint para listar todos los ingredientes: https://www.themealdb.com/api/json/v1/1/list.php?i=list
+**Gourmet Go** es una aplicación frontend que permite a los usuarios buscar recetas a partir de un ingrediente específico.
 
-Al consultar esta dirección, obtendrán un objeto JSON que contiene un array. Cada elemento de ese array es un objeto que representa un ingrediente. La propiedad clave que nos interesa de cada objeto es strIngredient. Este es el dato que luego utilizaremos en el endpoint de filtrado para buscar las recetas.
+El sistema consume datos en tiempo real desde una API externa y muestra los resultados sin recargar la página, aplicando principios modernos de desarrollo web.
 
-Por ejemplo, un segmento del JSON que devuelve la API se ve así:
+---
 
+## ✨ Features
+
+* 🔍 Búsqueda de recetas por ingrediente
+* ⚡ Consumo de API con `fetch` y `async/await`
+* 🧠 Renderizado dinámico del DOM
+* 🔄 Actualización de resultados sin recarga
+* ❌ Manejo de búsquedas sin resultados
+* 🎨 UI basada en Bootstrap
+
+---
+
+## 🛠️ Tecnologías
+
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* Bootstrap
+* API: [TheMealDB](https://www.themealdb.com/)
+
+---
+
+## 📡 Uso de la API
+
+### Listar ingredientes disponibles
+
+```
+https://www.themealdb.com/api/json/v1/1/list.php?i=list
+```
+
+### Buscar recetas por ingrediente
+
+```
+https://www.themealdb.com/api/json/v1/1/filter.php?i=INGREDIENTE
+```
+
+Ejemplo de respuesta:
+
+```json
 {
-      "idIngredient": "47",
-      "strIngredient": "Cardamom",
-      "strDescription": null,
-      "strType": null
-    }
+  "idIngredient": "47",
+  "strIngredient": "Cardamom"
+}
+```
 
-Conocer este listado les permitirá entender qué datos son válidos para las búsquedas que implementarán a continuación. Al finalizar este sprint, tendremos un producto mínimo viable (MVP) listo para ser presentado.
+---
 
-## Historias de Usuario a Implementar
+## ⚙️ Instalación
 
-### HU-04: Búsqueda Funcional de Recetas
+1. Clonar repositorio:
 
-    Como usuario,
+```bash
+git clone https://github.com/TrilloLillo/EF-M4-Gourmet-Go.git
+cd EF-M4-Gourmet-Go
+```
 
-    Quiero poder escribir un ingrediente en la barra de búsqueda y presionar "Buscar",
+2. Abrir el proyecto:
 
-    Para obtener una lista de recetas que contengan ese ingrediente.
+```bash
+open index.html
+```
 
-## Criterios de Aceptación:
+*(o usar Live Server en VS Code)*
 
-    ✅ Al enviar el formulario de búsqueda (haciendo clic en el botón o presionando Enter), se debe prevenir el comportamiento por defecto de recarga de la página.
+---
 
-    ✅ Se debe capturar el texto ingresado por el usuario en el campo de búsqueda.
+## 🧠 Funcionamiento
 
-    ✅ Se debe realizar una llamada asíncrona a la API de TheMealDB usando el ingrediente capturado. El endpoint a utilizar es: https://www.themealdb.com/api/json/v1/1/filter.php?i=[ingrediente_del_usuario].
+### Flujo principal
 
-    ✅ La llamada a la API debe realizarse utilizando la sintaxis moderna fetch con async/await.
+1. Usuario ingresa un ingrediente
+2. Se intercepta el submit del formulario
+3. Se realiza una petición a la API
+4. Se procesan los datos
+5. Se renderizan las recetas dinámicamente
 
-## HU-05: Renderizado Dinámico de Resultados
+---
 
-    Como usuario,
+## 📋 Historias de Usuario Implementadas
 
-    Quiero que los resultados de mi búsqueda aparezcan en la galería sin que la página se recargue,
+### 🔎 Búsqueda de recetas
 
-    Para tener una experiencia de usuario fluida y rápida.
+* Captura input del usuario
+* Llamada a API con `async/await`
+* Prevención de recarga del formulario
 
-## Criterios de Aceptación:
+### 🧩 Renderizado dinámico
 
-    ✅ Las tarjetas de recetas "hard-codeadas" del index.html deben ser eliminadas. El contenedor de resultados debe estar vacío por defecto.
+* Generación de tarjetas con template literals
+* Inserción dinámica en el DOM
+* Limpieza de resultados previos
 
-    ✅ Por cada receta devuelta por la API, se debe generar dinámicamente una tarjeta HTML y añadirla al DOM.
+### ⚠️ Manejo de errores
 
-    ✅ La estructura HTML de cada tarjeta debe ser generada utilizando template literals de ES6+ y debe replicar exactamente el diseño de las tarjetas del Sprint 1 (usando las mismas clases de Bootstrap).
+* Mensaje cuando no hay resultados (`meals === null`)
 
-    ✅ Los datos de la receta (nombre, imagen) deben ser extraídos del objeto de respuesta de la API, preferiblemente usando desestructuración.
+---
 
-    ✅ Al realizar una nueva búsqueda, los resultados anteriores deben ser eliminados del contenedor antes de mostrar los nuevos.
+## 📁 Estructura del Proyecto
 
-## HU-06: Manejo de Búsquedas sin Resultados
+```
+/
+├── index.html
+├── styles.css
+├── app.js
+└── assets/
+```
 
-    Como usuario,
+---
 
-    Quiero recibir un mensaje claro si mi búsqueda no encuentra ninguna receta,
+## 🧪 Buenas Prácticas Aplicadas
 
-    Para saber que la búsqueda se completó y que debo intentar con otro ingrediente.
+* Uso de `const` y `let`
+* Arrow functions
+* Template literals
+* Destructuring
+* Código asincrónico limpio con `async/await`
+* Separación de lógica (JS) y estructura (HTML)
 
-## Criterios de Aceptación:
+---
 
-    ✅ Si la respuesta de la API indica que no se encontraron recetas para un ingrediente (meals es null), el contenedor de resultados debe mostrar un único mensaje informativo, como por ejemplo: "Lo sentimos, no se encontraron recetas. Intenta con otro ingrediente."
+## 👤 Autor
 
-
-## Requisitos Técnicos y Entregables
-
-    Código Fuente: Todo el código JavaScript debe ser escrito en el archivo app.js.
-
-    Sintaxis Moderna (ES6+): Es mandatorio el uso de let y const para la declaración de variables, arrow functions, template literals y destructuring.
-
-    Asincronía: La gestión de las llamadas a la API debe realizarse con fetch y la sintaxis async/await para un manejo de código limpio y legible.
-
-    Manipulación del DOM: Toda la interacción con el HTML (lectura de inputs, limpieza y renderizado de resultados) debe hacerse a través de los métodos del DOM.
-
-    Buenas Prácticas (Opcional pero recomendado): Considerar el uso de Programación Orientada a Objetos (POO) creando una clase Receta para modelar y estandarizar los datos recibidos de la API antes de renderizarlos.
-
-    Entregable: Un repositorio público de GitHub con el proyecto finalizado y completamente funcional. El enlace al repositorio es el único entregable requerido.
+Desarrollado por [TrilloLillo](https://github.com/TrilloLillo)
